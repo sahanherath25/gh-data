@@ -36,5 +36,5 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to live
+      - name: Deploy
         run: echo "Deploying..."
