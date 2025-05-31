@@ -1,0 +1,20 @@
+name: Test Workkflow
+on:
+  push:
+    branches:
+      - 'dev-*'
+      - "lead-dev"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the Code From Rep
+        uses: actions/checkout@v4
+      - name: INstall Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Dependencies
+        run: npm ci
+      - name: Running the Test
+        run: echo "Testing in the Server...."
